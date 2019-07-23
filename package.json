@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Gean-Santos/CursoNodeJs-Devmedia1/issues"
   },
-  "homepage": "https://github.com/Gean-Santos/CursoNodeJs-Devmedia1#readme"
+  "homepage": "https://github.com/Gean-Santos/CursoNodeJs-Devmedia1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
