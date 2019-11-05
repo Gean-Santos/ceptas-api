@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database/database');
+const bcrypt = require('bcryptjs')
 
 const Cadastro = sequelize.define('pessoas',{
     id:{

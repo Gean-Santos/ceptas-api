@@ -8,7 +8,7 @@ const router = express.Router()
 router.get('/usuarios', controller.buscarTodos)
 
 router.post('/registrar', controller.criar)
-
+router.post('/logar', controller.login)
 //router.put('/spoilers/:id', controller.atualizar)
 
 //router.delete('/spoilers/:id', controller.excluir)

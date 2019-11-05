@@ -1,14 +1,16 @@
 const http = require('http');
 const express = require('express');
+const bodyParser = require('body-parser');
 const status = require('http-status');
 const router = require('./routes/users');
 const sequelize = require('./database/database');
-const cors = require('cors')
+const cors = require('cors');
 
 const app = express();
 
 app.use(cors())
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/ceptas', router);
 
 app.get('/', function (req, res, next) {
