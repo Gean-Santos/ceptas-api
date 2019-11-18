@@ -2,19 +2,27 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const status = require('http-status');
-const router = require('./routes/users');
-const sequelize = require('./database/database');
+
+const routesFuncionarios = require('./routes/funcionarios');
+const routesPessoas = require('./routes/pessoas');
+const routesAnimais = require('./routes/animais')
+
+//const sequelize = require('./database/database');
 const cors = require('cors');
 
+
+const port = process.env.PORT || 3003
 const app = express();
 
 app.use(cors())
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use('/ceptas', router);
+app.use('/ceptas', routesFuncionarios);
+app.use('/ceptas', routesPessoas);
+app.use('/ceptas', routesAnimais);
 
 app.get('/', function (req, res, next) {
-    res.json({msg: 'This is CORS-enabled for all origins!'})
+    res.send('Welcome to the CePTAS API')
   })
 
 
@@ -22,12 +30,9 @@ app.use((request, response, next) =>{
     response.status(status.NOT_FOUND).send()
 });
 
-app.use((error, request, response, next) =>{
+app.use((error, response, next) =>{
     response.status(status.INTERNAL_SERVER_ERROR).json({ error })
 });
-
-sequelize.sync().then(() => {
-    const port = process.env.PORT || 3000
 
     app.set('port', port)
 
@@ -35,5 +40,5 @@ sequelize.sync().then(() => {
 
     server.listen(port)
 
-})
+
 

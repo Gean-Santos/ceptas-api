@@ -3,7 +3,7 @@ module.exports = {
         database:{
             host: 'localhost',
             port: 3306,
-            name: 'bd_teste_CEPTAS',
+            name: 'BDCePTAS',
             dialect: 'mysql',
             user: 'root',
             password: 'G3@n1234'

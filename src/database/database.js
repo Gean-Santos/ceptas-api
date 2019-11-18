@@ -13,4 +13,7 @@ const sequelize = new Sequelize(
         dialect: config.database.dialect
     }
 )
+let conexao  = sequelize.authenticate()
+    .then(()=> console.log('Conectado'))
+    .catch((erro)=> console.log(erro));
 module.exports = sequelize
