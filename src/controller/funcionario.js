@@ -93,16 +93,16 @@ exports.login = async(request, response) =>{
         })
 
         if(!user)
-        return response.status(status.NOT_FOUND).send({error: 'User not found'})
+        return response.status(404).send({error: 'User not found'})
 
         if(await senha !== user.senha_funcionario)
-        return response.status(status.NOT_FOUND).send({error: 'Invalid password'})
+        return response.status(401).send({error: 'Invalid password'})
 
         user.senha = undefined
         response.send({
             user, 
         })
     } catch (err) {
-        return response.status(status.BAD_REQUEST).send({error: 'Invalid data'})
+        return response.status(400).send({error: 'Invalid data'})
     }
 }

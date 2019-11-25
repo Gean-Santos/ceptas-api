@@ -1,4 +1,4 @@
-const Cadastro = require('../model/Pessoa');
+const Pessoa = require('../model/Pessoa');
 const status = require('http-status');
 
 exports.criar = async(request, response) =>{
@@ -16,7 +16,7 @@ exports.criar = async(request, response) =>{
     const id_documento = request.body.id_documento;
 
     try{
-            const pessoa = await Cadastro.create({
+            const pessoa = await Pessoa.create({
                 nm_pessoa:nome,
                 tp_pessoa:tipo_pessoa,
                 ds_email:email,
@@ -38,8 +38,8 @@ exports.criar = async(request, response) =>{
         return response.status(404).send({error: err})
     }
 }
-exports.buscarTodos = async(req, response) => {
-    await Cadastro.findAll()
+exports.buscarTodos = async(request, response) => {
+    await Pessoa.findAll()
     .then(pessoas => response.json({
         data: pessoas
     }))
@@ -49,5 +49,15 @@ exports.buscarTodos = async(req, response) => {
         error: error
     }))
 
+}
+
+exports.buscarPessoa = async(request, response) => {
+    const email = request.params.email;
+    await Pessoa.findOne({
+        where:{ds_email: email},
+        attributes: ['id_pessoa', 'ds_email']
+    })
+    .then(pessoa => response.json(pessoa))
+    .catch(()=> response.status(404).json({erro: 'Email não cadastrado'}))
 }
 

@@ -1,15 +1,15 @@
 const express = require('express')
-const controller = require('../controller/pessoa')
+const controller = require('../controller/animal')
 
 const router = express.Router()
 
-//router.get('/spoilers/:id', controller.buscarUm)
+router.post('/animais/animal', controller.buscarUm)
 
 router.get('/animais/todos', controller.buscarTodos)
 
 router.post('/animais/registrar', controller.criar)
 
-//router.put('/animais/:id', controller.atualizar)
+router.put('/animais/:id', controller.atualizar)
 
 //router.delete('/animais/:id', controller.excluir)
 

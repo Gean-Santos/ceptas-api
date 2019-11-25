@@ -1,15 +1,16 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database');
 
-const Documento = sequelize.define('Documento',{
-    id_documento:{
+const TipoApreensao = sequelize.define('Tipo_Apreensao',{
+    id_tipo_apreensao:{
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.INTEGER(30)
+        autoIncrement: true,
+        type: Sequelize.INTEGER,
     },
-    tp_documento:{
+    tipo_apreensao:{
         allowNull: false,
-        type:Sequelize.STRING(25)
+        type: Sequelize.STRING(50),
     },
     createdAt:{
         allowNull: false,
@@ -19,6 +20,6 @@ const Documento = sequelize.define('Documento',{
         allowNull: false,
         type: Sequelize.DATE(6)  
     }
-},{freezeTableName: true })
+},{freezeTableName:true});
 
-module.exports = Documento;
+module.exports = TipoApreensao;

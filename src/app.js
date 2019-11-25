@@ -5,7 +5,8 @@ const status = require('http-status');
 
 const routesFuncionarios = require('./routes/funcionarios');
 const routesPessoas = require('./routes/pessoas');
-const routesAnimais = require('./routes/animais')
+const routesAnimais = require('./routes/animais');
+const routesEspecies = require('./routes/especies')
 
 //const sequelize = require('./database/database');
 const cors = require('cors');
@@ -20,8 +21,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/ceptas', routesFuncionarios);
 app.use('/ceptas', routesPessoas);
 app.use('/ceptas', routesAnimais);
+app.use('/ceptas', routesEspecies);
 
-app.get('/', function (req, res, next) {
+app.get('/ceptas', function (req, res, next) {
     res.send('Welcome to the CePTAS API')
   })
 
