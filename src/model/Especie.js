@@ -10,19 +10,31 @@ const Especie = sequelize.define('Especie',{
     },
     nm_popular:{
         allowNull: false,
-        type: Sequelize.STRING(60)
+        type: Sequelize.STRING(60),
+        validate:{
+            len: [2,60]
+        }
     },
     ds_especie:{
         allowNull: false,
-        type: Sequelize.STRING(80)
+        type: Sequelize.STRING(80),
+        validate:{
+            len: [2,80]
+        }
     },
     grupo_taxonomico:{
         allowNull: false,
-        type: Sequelize.STRING(80)
+        type: Sequelize.STRING(80),
+        validate:{
+            len: [2,80]
+        }
     },
     nm_cientifico:{
         allowNull: false,
-        type: Sequelize.STRING(80)
+        type: Sequelize.STRING(80),
+        validate:{
+            len: [2,80]
+        }
     },
     createdAt:{
         allowNull: false,

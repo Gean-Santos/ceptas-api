@@ -11,10 +11,16 @@ const Recinto = sequelize.define('Recinto',{
     ds_recinto:{
         allowNull: false,
         type: Sequelize.STRING(50),
+        validate:{
+            len: [2,50]
+        }
     },
     ds_local:{
         allowNull: false,
         type: Sequelize.STRING(50),
+        validate:{
+            len: [2,50]
+        }
     },
     createdAt:{
         allowNull: false,

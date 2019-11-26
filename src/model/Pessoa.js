@@ -85,7 +85,7 @@ const Pessoa = sequelize.define('Pessoa',{
         allowNull: false,
         type: Sequelize.NUMBER(30),
         validate:{
-            len: [2,30]
+            len: [1,30]
         }
     },
     createdAt:{

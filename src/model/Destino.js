@@ -10,23 +10,38 @@ const Destino = sequelize.define('Destino',{
     },
     ds_destino:{
         allowNull: false,
-        type: Sequelize.STRING(60)
+        type: Sequelize.STRING(60),
+        validate:{
+            len: [2,60]
+        }
     },
     tp_destino:{
         allowNull: false,
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING(50),
+        validate:{
+            len: [2,50]
+        }
     },
     dt_saida:{
         allowNull: false,
         type: Sequelize.DATE(6),
+        validate:{
+            len: [2,6]
+        }
     },
     estado_animal:{
         allowNull: false,
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING(50),
+        validate:{
+            len: [2,50]
+        }
     },
     id_animal:{
         allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.INTEGER(6),
+        validate:{
+            len: [1,6]
+        }
     },
     createdAt:{
         allowNull: false,

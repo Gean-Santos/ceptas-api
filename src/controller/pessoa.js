@@ -1,5 +1,4 @@
 const Pessoa = require('../model/Pessoa');
-const status = require('http-status');
 
 exports.criar = async(request, response) =>{
     const nome = request.body.nome;
@@ -54,7 +53,7 @@ exports.buscarTodos = async(request, response) => {
 exports.buscarPessoa = async(request, response) => {
     const email = request.params.email;
     await Pessoa.findOne({
-        where:{ds_email: email},
+        where:{ds_email: email,},
         attributes: ['id_pessoa', 'ds_email']
     })
     .then(pessoa => response.json(pessoa))

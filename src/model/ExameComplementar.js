@@ -10,15 +10,24 @@ const ExameComplementar = sequelize.define('Exame_Fisico',{
     },
     especificacao_exame:{
         allowNull: false,
-        type: Sequelize.STRING(600)
+        type: Sequelize.STRING(600),
+        validate:{
+            len: [2,600]
+        }
     },
     resultado_exame:{
         allowNull: false,
-        type: Sequelize.STRING(600)
+        type: Sequelize.STRING(600),
+        validate:{
+            len: [2,600]
+        }
     },
     id_exame_fisico:{
         allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.INTEGER(6),
+        validate:{
+            len: [1,6]
+        }
     },
     createdAt:{
         allowNull: false,

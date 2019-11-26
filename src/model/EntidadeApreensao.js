@@ -11,10 +11,16 @@ const EntidadeApreensao = sequelize.define('Entidade_Apreensao',{
     tp_entidade_apreensao:{
         allowNull: false,
         type: Sequelize.STRING(50),
+        validate:{
+            len: [2,50]
+        }
     },
     nm_entidade_apreensao:{
         allowNull: false,
         type: Sequelize.STRING(50),
+        validate:{
+            len: [2,50]
+        }
     },
     createdAt:{
         allowNull: false,

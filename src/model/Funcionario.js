@@ -11,6 +11,9 @@ const Funcionario = sequelize.define('Funcionario',{
     nu_matricula:{
         allowNull: false,
         type: Sequelize.NUMBER(6),
+        validate:{
+            len: [1,6]
+        }
     },
     chefe_funcionario:{
         allowNull: false,
@@ -22,19 +25,25 @@ const Funcionario = sequelize.define('Funcionario',{
     nm_cargo:{
         type: Sequelize.STRING(50),
         validate:{
-            len: [10,50]
+            len: [2,50]
         }
     },
     dt_admissao:{
         allowNull: false,
         type: Sequelize.DATEONLY,
+        validate:{
+            len: [2,10]
+        }
     },
     dt_desligamento:{
-        type: Sequelize.DATEONLY
+        type: Sequelize.DATEONLY,
     },
     dt_nascimento:{
         allowNull: false,
         type: Sequelize.DATEONLY,
+        validate:{
+            len: [2,10]
+        }
     },
     login_funcionario:{
         allowNull: false,
@@ -56,6 +65,9 @@ const Funcionario = sequelize.define('Funcionario',{
     id_pessoa:{
         allowNull: false,
         type: Sequelize.INTEGER,
+        validate:{
+            len: [1,6]
+        }
     },
     createdAt:{
         allowNull: false,

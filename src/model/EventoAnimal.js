@@ -10,11 +10,17 @@ const EventoAnimal = sequelize.define('Evento_Animal',{
     },
     dt_evento_animal:{
         allowNull: false,
-        type: Sequelize.DATEONLY
+        type: Sequelize.DATEONLY,
+        validate:{
+            len: [2,30]
+        }
     },
     tp_evento_animal:{
         allowNull: false,
-        type: Sequelize.STRING(30)
+        type: Sequelize.STRING(30),
+        validate:{
+            len: [2,30]
+        }
     },
     foto_animal:{
         allowNull: false,
@@ -22,27 +28,45 @@ const EventoAnimal = sequelize.define('Evento_Animal',{
     },
     observacao:{
         allowNull: false,
-        type: Sequelize.STRING(2000)
+        type: Sequelize.STRING(2000),
+        validate:{
+            len: [2,2000]
+        }
     },
     id_exame_fisico:{
         allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.INTEGER(6),
+        validate:{
+            len: [1,6]
+        }
     },
     id_exame_complementar:{
         allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.INTEGER(6),
+        validate:{
+            len: [1,6]
+        }
     },
     id_evento:{
         allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.INTEGER(6),
+        validate:{
+            len: [1,6]
+        }
     },
     id_animal:{
         allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.INTEGER(6),
+        validate:{
+            len: [1,6]
+        }
     },
     id_funcionario:{
         allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.INTEGER(6),
+        validate:{
+            len: [1,6]
+        }
     },
     createdAt:{
         allowNull: false,

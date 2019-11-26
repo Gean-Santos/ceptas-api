@@ -10,19 +10,31 @@ const Apreensao = sequelize.define('Apreensao',{
     },
     historico_completo:{
         allowNull: false,
-        type: Sequelize.STRING(800)
+        type: Sequelize.STRING(800),
+        validate:{
+            len: [2,800]
+        }
     },
     local_captura:{
         allowNull: false,
-        type: Sequelize.STRING(80)
+        type: Sequelize.STRING(80),
+        validate:{
+            len: [2,80]
+        }
     },
     id_entidade_apreensao:{
         allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.INTEGER(6),
+        validate:{
+            len: [1,6]
+        }
     },
     id_tipo_apreensao:{
         allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.INTEGER(6),
+        validate:{
+            len: [1,6]
+        }
     },
     createdAt:{
         allowNull: false,

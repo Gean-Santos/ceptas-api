@@ -72,11 +72,11 @@ exports.deletar = async(request, response) => {
 exports.buscarTodos = async(request, response) => {
     await Funcionario.findAll()
     .then(pessoas => response.json({
-        data: pessoas
+        funcionarios: pessoas
     }))
     .catch(error => response.json({
         error: true,
-        data:[],
+        funcionarios:[],
         error: error
     }))
 
