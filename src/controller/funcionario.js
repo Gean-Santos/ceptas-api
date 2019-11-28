@@ -56,7 +56,7 @@ exports.atualizar = async(request, response) =>{
             {id_funcionario:idFuncionario}
         })
         .then(() => response.status(200).send({response:'OK'}))
-        .catch((err) => response.status(404).send({error:'Funcionário não encontrado'}));
+        .catch((err) => response.status(400).send({error:'Funcionário não encontrado'}));
 }
 
 exports.deletar = async(request, response) => {

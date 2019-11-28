@@ -8,7 +8,7 @@ exports.criar = async(request, response, next) =>{
 
     try {
     if(await Especie.findOne({where:{ds_especie: descricaoEspecie}}))
-        return response.status(404).send({error: 'A especie já foi cadastrada'})
+        return response.status(400).send({error: 'A especie já foi cadastrada'})
 
     const especie = await Especie.create({
         nm_popular:nomePopular,

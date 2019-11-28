@@ -70,7 +70,7 @@ const ExameFisico = sequelize.define('Exame_Fisico',{
     },
     sistema_respiratorio:{
         allowNull: false,
-        type: Sequelize.String(60),
+        type: Sequelize.STRING(60),
         validate:{
             len: [2,60]
         }

@@ -6,7 +6,7 @@ exports.criar = async(request, response) =>{
 
     try {
     if(await EntidadeApreensao.findOne({where:{tp_entidade_apreensao:tipoEntidadeApreensao}}))
-        return response.status(203).json('A Entidade de Apreensão já foi cadastrada')
+        return response.status(400).json('A Entidade de Apreensão já foi cadastrada')
 
     await EntidadeApreensao.create({
         tp_entidade_apreensao:tipoEntidadeApreensao,
@@ -33,7 +33,7 @@ exports.atualizar = async(request, response) =>{
 exports.buscarTodos = async(request, response) => {
 
      await EntidadeApreensao.findAll({
-        attributes: ['id_entidade_apreensao', 'tp_entidade_apreensao']
+        attributes: ['id_entidade_apreensao', 'tp_entidade_apreensao', 'nm_entidade_apreensao']
      })
     .then(entidade => response.json({
         entidadesApreensao: entidade,

@@ -12,7 +12,7 @@ exports.criar = async(request, response, next) =>{
 
     try {
     if(await Animal.findOne({where:{marcacao}}))
-        return response.status(404).json('O animal já foi cadastrado')
+        return response.status(400).json('O animal já foi cadastrado')
 
     const animal = await Animal.create({
         sexo_animal:sexo,

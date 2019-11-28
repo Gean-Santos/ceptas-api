@@ -9,7 +9,7 @@ router.get('/especies/todos', controller.buscarTodos)
 
 router.post('/especies/cadastrar', controller.criar)
 
-//router.put('/animais/:id', controller.atualizar)
+//router.put('/especies/:id', controller.atualizar)
 
 //router.delete('/animais/:id', controller.excluir)
 

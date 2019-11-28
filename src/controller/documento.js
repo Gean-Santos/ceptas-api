@@ -1,17 +1,19 @@
 const Documento = require('../model/Documento');
 
 exports.criar = async(request, response) =>{
+    const nu_documento = request.body.numeroDocumento;
     const tipoDocumento = request.body.tipoDocumento;
 
     try {
-    if(await Documento.findOne({where:{tp_documento:tipoDocumento}}))
-        return response.status(404).json('O documento já foi cadastrado')
+    if(await Documento.findOne({where:{id_documento:nu_documento}}))
+        return response.status(400).json('O documento já foi cadastrado')
 
-
-    await Documento.create({
+    const documento = await Documento.create({
+        id_documento: nu_documento,
         tp_documento:tipoDocumento
     })
-    return response.json('Cadastrado com sucesso')
+    return response.json(documento.id_documento)
+    
     } catch (err) {
         return response.status(500).send({error: 'Não foi possível cadastrar o documento'})
     }
@@ -22,6 +24,7 @@ exports.atualizar = async(request, response) =>{
     const tp_documento = request.body.tipoDocumento
     await Documento.update({
         tp_documento: tp_documento,
+        id_documento:id_documento,
     },{where:
         {id_documento:id_documento}
     })

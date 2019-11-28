@@ -6,7 +6,7 @@ exports.criar = async(request, response) =>{
 
     try {
     if(await Recinto.findOne({where:{ds_recinto:recinto}}))
-        return response.status(404).json('O recinto já foi cadastrado')
+        return response.status(400).json('O recinto já foi cadastrado')
 
 
     await Recinto.create({

@@ -10,7 +10,13 @@ const routesEspecies = require('./routes/especies');
 const routesDocumentos = require('./routes/documentos');
 const routesRecintos = require('./routes/recintos');
 const routesTiposApreensao = require('./routes/tiposApreensao');
-const routesEntidadesApreensao = require('./routes/entidadesApreensao')
+const routesEntidadesApreensao = require('./routes/entidadesApreensao');
+const routesApreensoes = require('./routes/apreensoes')
+const routesDestinos = require('./routes/destinos');
+const routesEventos = require('./routes/eventos');
+const routesEventosAnimal = require('./routes/eventosAnimal');
+const routesExamesFisicos = require('./routes/examesFisicos');
+const routesExamesComplementares = require('./routes/examesComplementares');
 
 //const sequelize = require('./database/database');
 const cors = require('cors');
@@ -30,6 +36,12 @@ app.use('/ceptas', routesDocumentos);
 app.use('/ceptas', routesRecintos);
 app.use('/ceptas', routesTiposApreensao);
 app.use('/ceptas', routesEntidadesApreensao);
+app.use('/ceptas', routesApreensoes);
+app.use('/ceptas', routesDestinos);
+app.use('/ceptas', routesEventos);
+app.use('/ceptas', routesEventosAnimal);
+app.use('/ceptas', routesExamesFisicos);
+app.use('/ceptas', routesExamesComplementares);
 app.get('/ceptas', function (req, res, next) {
     res.send('Welcome to the CePTAS API')
   })

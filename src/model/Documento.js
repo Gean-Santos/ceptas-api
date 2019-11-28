@@ -4,9 +4,8 @@ const sequelize = require('../database');
 const Documento = sequelize.define('Documento',{
     id_documento:{
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(7)
+        type: Sequelize.BIGINT
     },
     tp_documento:{
         allowNull: false,

@@ -21,10 +21,7 @@ const Animal = sequelize.define('Animal',{
     },
     dt_idade_estimada:{
         allowNull: false,
-        type: Sequelize.DATEONLY,
-        validate:{
-            len: [6,10]
-        }
+        type: Sequelize.DATE,
     },
     idade_estimada:{
         allowNull: false,

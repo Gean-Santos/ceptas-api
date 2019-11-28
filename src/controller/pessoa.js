@@ -13,8 +13,15 @@ exports.criar = async(request, response) =>{
     const cidade = request.body.cidade;
     const uf = request.body.uf;
     const id_documento = request.body.id_documento;
+    function validaCep(cep){
+        cep = Number(cep.replace(/\D/g, ''));
+        return cep;
+    }
+    try{    
+        if(await Pessoa.findOne({where:{id_documento}}))
+            return response.status(400)
+            .send({error: 'A pessoa já foi cadastrada'})
 
-    try{
             const pessoa = await Pessoa.create({
                 nm_pessoa:nome,
                 tp_pessoa:tipo_pessoa,
@@ -23,18 +30,18 @@ exports.criar = async(request, response) =>{
                 telefone_pessoa:telefone,
                 endereco_pessoa:endereco,
                 tp_endereco:tipo_endereco,
-                nu_cep:cep,
+                nu_cep:validaCep(cep),
                 bairro_endereco:bairro,
                 cidade_endereco:cidade,
                 uf_endereco:uf,
-                id_documento,
+                id_documento:id_documento,
             })
             return response.json({
                 pessoa
             })
         
     }catch(err){
-        return response.status(404).send({error: err})
+        return response.status(500).send({error: err})
     }
 }
 exports.buscarTodos = async(request, response) => {

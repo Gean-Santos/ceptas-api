@@ -30,20 +30,14 @@ const Funcionario = sequelize.define('Funcionario',{
     },
     dt_admissao:{
         allowNull: false,
-        type: Sequelize.DATEONLY,
-        validate:{
-            len: [2,10]
-        }
+        type: Sequelize.DATE,
     },
     dt_desligamento:{
-        type: Sequelize.DATEONLY,
+        type: Sequelize.DATE,
     },
     dt_nascimento:{
         allowNull: false,
         type: Sequelize.DATEONLY,
-        validate:{
-            len: [2,10]
-        }
     },
     login_funcionario:{
         allowNull: false,
