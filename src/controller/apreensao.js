@@ -43,7 +43,7 @@ exports.atualizar = async(request, response) =>{
 
 exports.buscarTodos = async(request, response) => {
 
-     await Apreensao.findAll()
+     await Apreensao.findAll({ limit: 10, order: [['updatedAt', 'DESC']]})
     .then(apreensao => response.json({
         apreensoes: apreensao,
     }))

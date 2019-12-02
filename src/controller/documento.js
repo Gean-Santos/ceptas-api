@@ -1,8 +1,9 @@
 const Documento = require('../model/Documento');
 
 exports.criar = async(request, response) =>{
-    const nu_documento = request.body.numeroDocumento;
-    const tipoDocumento = request.body.tipoDocumento;
+    const numero_documento = request.body.numeroDocumento;
+    const nu_documento = numero_documento.split("").filter(Number).join("");
+    const tipoDocumento = request.body.tipoDocumento.toUpperCase();
 
     try {
     if(await Documento.findOne({where:{id_documento:nu_documento}}))
