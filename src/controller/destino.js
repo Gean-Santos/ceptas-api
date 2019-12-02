@@ -47,7 +47,7 @@ exports.atualizar = async(request, response) =>{
 
 exports.buscarTodos = async(request, response) => {
 
-     await Destino.findAll()
+     await Destino.findAll({ limit: 10, order: [['updatedAt', 'DESC']]})
     .then(destino => response.json({
         destinos: destino,
     }))
