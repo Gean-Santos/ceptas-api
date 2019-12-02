@@ -5,7 +5,9 @@ const router = express.Router()
 
 router.post('/animais/animal', controller.buscarUm)
 
-router.get('/animais/todos', controller.buscarTodos)
+router.get('/animais/todos', controller.buscarAnimais)
+
+router.get('/animais/', controller.buscarTodos)
 
 router.post('/animais/registrar', controller.criar)
 

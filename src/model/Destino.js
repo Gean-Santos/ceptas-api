@@ -24,10 +24,7 @@ const Destino = sequelize.define('Destino',{
     },
     dt_saida:{
         allowNull: false,
-        type: Sequelize.DATE(6),
-        validate:{
-            len: [2,6]
-        }
+        type: Sequelize.DATEONLY,
     },
     estado_animal:{
         allowNull: false,

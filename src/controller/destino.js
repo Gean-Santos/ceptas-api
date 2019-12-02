@@ -11,7 +11,7 @@ exports.criar = async(request, response, next) =>{
     if(await Destino.findOne({where:{ds_destino:descricaoDestino}}))
         return response.status(400).json('O destino já foi cadastrado')
 
-    await Apreensao.create({
+    await Destino.create({
         ds_destino: descricaoDestino,
         tp_destino: tipoDestino,
         dt_saida: dataSaida,

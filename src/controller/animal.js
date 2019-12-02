@@ -56,7 +56,7 @@ exports.atualizar = async(request, response) =>{
     .catch((err) => response.status(404).send({error:'Animal não encontrado'}));
 }
 
-exports.buscarTodos = async(request, response) => {
+exports.buscarAnimais = async(request, response) => {
 
      await Animal.findAll({ limit: 10, order: [['updatedAt', 'DESC']]})
     .then(animais => response.json({
@@ -67,6 +67,19 @@ exports.buscarTodos = async(request, response) => {
         animais:[],
         error: error
     }))
+}
+exports.buscarTodos = async(request, response) => {
+
+    await Animal.findAll({attributes: ['id_animal', 'marcacao'], 
+    order: [['updatedAt', 'DESC']]})
+   .then(animais => response.json({
+       animais: animais,
+   }))
+   .catch(error => response.json({
+       error: true,
+       animais:[],
+       error: error
+   }))
 }
 
 exports.buscarUm = async(request, response) =>{

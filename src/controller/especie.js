@@ -21,13 +21,13 @@ exports.criar = async(request, response, next) =>{
         especie
     })
     } catch (err) {
-        return response.json({erro: 'Dados inválidos'})
+        return response.status(500).json({erro: 'Dados inválidos'})
     }
 }
 
 exports.buscarTodos = async(request, response) => {
     await Especie.findAll({
-        attributes: ['id_especie', 'ds_especie']})
+        attributes: ['id_especie', 'nm_popular', 'ds_especie']})
     .then(especies => response.json({
         data: especies
     }))

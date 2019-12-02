@@ -30,7 +30,7 @@ exports.criar = async(request, response) =>{
         })
         
     }catch(err){
-        return response.status(404).send({error: err})
+        return response.status(500).send({error: err})
     }
 }
 exports.atualizar = async(request, response) =>{
