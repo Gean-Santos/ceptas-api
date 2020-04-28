@@ -25,9 +25,9 @@ const cors = require('cors');
 const port = process.env.PORT || 3003
 const app = express();
 
-app.use(cors())
+app.use(cors());
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/ceptas', routesFuncionarios);
 app.use('/ceptas', routesPessoas);
 app.use('/ceptas', routesAnimais);
@@ -42,24 +42,24 @@ app.use('/ceptas', routesEventos);
 app.use('/ceptas', routesEventosAnimal);
 app.use('/ceptas', routesExamesFisicos);
 app.use('/ceptas', routesExamesComplementares);
-app.get('/ceptas', function (req, res, next) {
-    res.send('Welcome to the CePTAS API')
-  })
 
+app.get('/ceptas', function (req, res, next) {
+    res.send('Welcome to the CePTAS API');
+});
 
 app.use((request, response, next) =>{
-    response.status(status.NOT_FOUND).send()
+    response.status(status.NOT_FOUND).send();
 });
 
 app.use((error, response, next) =>{
-    response.status(status.INTERNAL_SERVER_ERROR).json({ error })
+    response.status(status.INTERNAL_SERVER_ERROR).json({ error });
 });
 
-    app.set('port', port)
+app.set('port', port);
 
-    const server = http.createServer(app)
+const server = http.createServer(app);
 
-    server.listen(port)
+server.listen(port);
 
 
 

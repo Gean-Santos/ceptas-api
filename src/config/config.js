@@ -5,7 +5,7 @@ module.exports = {
             port: 3306,
             name: 'BDCePTAS',
             dialect: 'mysql',
-            user: 'root',
+            user: 'gean',
             password: 'G3@n1234'
         }
     },
