@@ -1,5 +1,5 @@
 <p align="center"> 
-    <img src="https://user-images.githubusercontent.com/37232748/80671410-19b59900-8a80-11ea-9edb-8743f7f21052.png" alt="Logo Ceptas"> 
+    <img src="https://user-images.githubusercontent.com/37232748/80671525-7ca73000-8a80-11ea-8c1a-00897890e187.png" alt="Logo Ceptas"> 
 </p>
 
 #
