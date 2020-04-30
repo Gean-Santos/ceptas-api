@@ -1,6 +1,6 @@
 <p align="center"> 
-    <img src="https://user-images.githubusercontent.com/37232748/80670194-a78f8500-8a7c-11ea-8db1-d958ba6e1bda.png" alt="alternate text">
- </p>
+    <img src="https://user-images.githubusercontent.com/37232748/80671410-19b59900-8a80-11ea-9edb-8743f7f21052.png" alt="Logo Ceptas"> 
+</p>
 
 #
 
@@ -9,9 +9,11 @@
 
 * **Repositorio do APP mobile :**  [CeptasAPP](https://github.com/Gean-Santos/ceptas-app-react-native) 
 
-![telaInicioCeptas2](https://user-images.githubusercontent.com/37232748/80669560-17047500-8a7b-11ea-9124-10be4d09ad9e.jpg)
 
-> *Tela inicial do aplicativo*
+    <img src="https://user-images.githubusercontent.com/37232748/80669560-17047500-8a7b-11ea-9124-10be4d09ad9e.jpg" alt="Tela inicial do aplicativo">
+    <blockquote align="center">Tela inicial do aplicativo</blockquote>
+
+
 
 #
 
@@ -20,3 +22,5 @@
 * **Modules utilizados:** cors, express, body-parser, http-status, mysql2, sequelize.
 
 * **Clonar:** git clone https://github.com/Gean-Santos/ceptas-api.git
+
+
