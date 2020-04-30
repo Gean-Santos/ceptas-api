@@ -4,7 +4,7 @@
 
 #
 
-# API para o Sofwtare do CEPTAS (Centro de Pesquisa e Triagem de Animais Selvagens)
+# API em node para o aplicativo mobile do CEPTAS 
 
 
 * **Repositorio do APP mobile :**  [CeptasAPP](https://github.com/Gean-Santos/ceptas-app-react-native) 
