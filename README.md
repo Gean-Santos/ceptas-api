@@ -9,7 +9,7 @@
 * **Repositorio do APP mobile :**  [CeptasAPP](https://github.com/Gean-Santos/ceptas-app-react-native) 
 
 <img src="https://user-images.githubusercontent.com/37232748/80669560-17047500-8a7b-11ea-9124-10be4d09ad9e.jpg" alt="Tela inicial do aplicativo">
-<blockquote align="center">Tela inicial do aplicativo</blockquote>
+<blockquote>Tela inicial do aplicativo</blockquote>
 
 #
 
